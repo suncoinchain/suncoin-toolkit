@@ -1,6 +1,6 @@
 {
   "name": "@suncoin/eslint-config-suncoin",
-  "version": "1.1.2",
+  "version": "1.1.0",
   "description": "Eslint config for suncoin",
   "main": "lib/index.js",
   "files": [
@@ -8,7 +8,7 @@
   ],
   "repository": "https://github.com/suncoinchain/suncoin-toolkit/tree/master/packages/eslint-config-suncoin",
   "license": "MIT",
-  "author": "RabbitDoge",
+  "author": "SKINK",
   "private": false,
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.7.0",
