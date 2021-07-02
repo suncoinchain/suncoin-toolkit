@@ -1,8 +1,8 @@
-# Pancakeswap Profile SDK
+# Suncoinchain Profile SDK
 
-This package provides some handy functions to retrieve data for Pancakeswap Profile system.
+This package provides some handy functions to retrieve data for Suncoinchain Profile system.
 
-If you're looking for React-ready solution - take a look at the [profile-hook](https://github.com/pancakeswap/pancake-toolkit/tree/master/packages/pancake-profile-hook).
+If you're looking for React-ready solution - take a look at the [profile-hook](https://github.com/suncoinchain/suncoin-toolkit/tree/master/packages/suncoin-profile-hook).
 
 ##### Table of Contents
 
@@ -17,16 +17,16 @@ If you're looking for React-ready solution - take a look at the [profile-hook](h
 
 ## Installation
 
-Install `@pancakeswap/profile-sdk` into your project with npm:
+Install `@suncoinchain/profile-sdk` into your project with npm:
 
 ```bash
-npm install @pancakeswap/profile-sdk --save
+npm install @suncoinchain/profile-sdk --save
 ```
 
 or yarn:
 
 ```bash
-yarn add @pancakeswap/profile-sdk
+yarn add @suncoinchain/profile-sdk
 ```
 
 This package requires `web3` to be installed in your project. If you're using TypeScript you also should install `web3-eth-contract` and `web3-utils` to avoid type errors, although depending on your TypeScript and ESlint configuration you might skip installing those (since they are sub-packages of web3).
@@ -45,9 +45,9 @@ yarn add web3
 First set is to initialize the SDK with the following:
 
 ```js
-import PancakeProfileSdk from "@pancakeswap/profile-sdk";
+import SuncoinProfileSdk from "@suncoinchain/profile-sdk";
 
-const pancakeSdk = new PancakeProfileSdk();
+const suncoinSdk = new SuncoinProfileSdk();
 ```
 
 You can pass optional arguments to the constructor:
@@ -59,7 +59,7 @@ You can pass optional arguments to the constructor:
 - `chainId` - what chain ID to use, if not provided defaults to `56`
 
 ```js
-import PancakeProfileSdk from "@pancakeswap/profile-sdk";
+import SuncoinProfileSdk from "@suncoinchain/profile-sdk";
 import Web3 from "web3";
 
 const httpProvider = new Web3.providers.HttpProvider("https://mycustomnode.com", {
@@ -67,7 +67,7 @@ const httpProvider = new Web3.providers.HttpProvider("https://mycustomnode.com",
 });
 const myWeb3 = new Web3(httpProvider);
 
-const pancakeSdk = new PancakeProfileSdk(myWeb3, 97);
+const suncoinSdk = new SuncoinProfileSdk(myWeb3, 97);
 ```
 
 ### getUsername
@@ -75,10 +75,10 @@ const pancakeSdk = new PancakeProfileSdk(myWeb3, 97);
 Returns username for a given address. If the address does not have a profile or there is an error - returns empty string `""`.
 
 ```js
-import PancakeProfileSdk from "@pancakeswap/profile-sdk";
+import SuncoinProfileSdk from "@suncoinchain/profile-sdk";
 
-const pancakeSdk = new PancakeProfileSdk();
-const username = pancakeSdk.getUsername("0x123456789");
+const suncoinSdk = new SuncoinProfileSdk();
+const username = suncoinSdk.getUsername("0x123456789");
 console.log(username); // "Matatabi"
 ```
 
@@ -87,10 +87,10 @@ console.log(username); // "Matatabi"
 Returns team information for the team ID. In case of network error returns null. Note that at the moment `points` will return `0` for all teams (total team points will be calculated soon).
 
 ```js
-import PancakeProfileSdk from "@pancakeswap/profile-sdk";
+import SuncoinProfileSdk from "@suncoinchain/profile-sdk";
 
-const pancakeSdk = new PancakeProfileSdk();
-const team = pancakeSdk.getTeam(1);
+const suncoinSdk = new SuncoinProfileSdk();
+const team = suncoinSdk.getTeam(1);
 console.log(team);
 // {
 //   id: 1,
@@ -115,13 +115,13 @@ console.log(team);
 
 Returns full profile data for a given address. Under the hood retrieves username and team data using `getUsername` and `getTeam` and combines it with data from the profile contract. If address does not have a profile - returns `{ hasRegistered: false, profile: null }`. At the moment does not retrieve achievements (see [getAchievements](#getAchievements)).
 
-It also sets `profile_${address}` cookie containing username and avatar (now only for pancakeswap.finance domain, maybe configurable in future versions)
+It also sets `profile_${address}` cookie containing username and avatar (now only for suncoinchain.finance domain, maybe configurable in future versions)
 
 ```js
-import PancakeProfileSdk from "@pancakeswap/profile-sdk";
+import SuncoinProfileSdk from "@suncoinchain/profile-sdk";
 
-const pancakeSdk = new PancakeProfileSdk();
-const profile = pancakeSdk.getProfile("0x123456789");
+const suncoinSdk = new SuncoinProfileSdk();
+const profile = suncoinSdk.getProfile("0x123456789");
 console.log(profile);
 // {
 //   hasRegistered: true
@@ -144,7 +144,7 @@ console.log(profile);
 //       },
 //       sortOrder: 999,
 //       identifier: 'hiccup'
-//       type: 'pancake',
+//       type: 'suncoin',
 //       variationId: 10
 //     },
 //     team: {
@@ -174,11 +174,11 @@ console.log(profile);
 Returns array of achievements for a given address. If address has no achievements or no profile at all - returns empty array `[]`.
 
 ```js
-import PancakeProfileSdk from "@pancakeswap/profile-sdk";
+import SuncoinProfileSdk from "@suncoinchain/profile-sdk";
 
-const pancakeSdk = new PancakeProfileSdk();
+const suncoinSdk = new SuncoinProfileSdk();
 
-const achievements = pancakeSdk.getAchievements("0x123456789");
+const achievements = suncoinSdk.getAchievements("0x123456789");
 console.log(achievements);
 // [
 //   {
@@ -215,7 +215,7 @@ console.log(achievements);
 
 ## Roadmap
 
-Current version of this SDK is 90% copy of existing from [pancake-frontend](https://github.com/pancakeswap/pancake-frontend) repo. There are several improvements to be made in the future versions of this SDK:
+Current version of this SDK is 90% copy of existing from [suncoin-frontend](https://github.com/suncoinchain/suncoin-frontend) repo. There are several improvements to be made in the future versions of this SDK:
 
 - [ ] Better error handling (common bad status codes or broken internet connection)
 - [ ] Allow username & avatar cookie to be configurable or optional
