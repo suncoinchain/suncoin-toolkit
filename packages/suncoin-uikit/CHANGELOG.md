@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.7](https://github.com/suncoinchain/suncoin-toolkit/tree/master/packages/suncoin-uikit/compare/@suncoin/uikit@0.2.6...@suncoin/uikit@0.2.7) (2021-07-15)
+
+**Note:** Version bump only for package @suncoin/uikit
+
+
+
+
+
 ## [0.2.6](https://github.com/suncoinchain/suncoin-toolkit/tree/master/packages/suncoin-uikit/compare/@suncoin/uikit@0.2.5...@suncoin/uikit@0.2.6) (2021-07-15)
 
 **Note:** Version bump only for package @suncoin/uikit
