@@ -52,7 +52,13 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
-      <LogoIcon className="mobile-icon" />
+      {/* <LogoIcon className="mobile-icon" /> */}
+      <image
+        className="mobile-icon"
+        width="32"
+        height="32"
+        href="https://astershop.oss-cn-shenzhen.aliyuncs.com/bfav_small.svg"
+      />
       <LogoWithText className="desktop-icon" isDark={isDark} />
     </>
   );
