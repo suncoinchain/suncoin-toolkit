@@ -53,11 +53,12 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
   const innerLogo = (
     <>
       {/* <LogoIcon className="mobile-icon" /> */}
-      <image
+      <img
         className="mobile-icon"
         width="32"
         height="32"
-        href="https://astershop.oss-cn-shenzhen.aliyuncs.com/bfav_small.svg"
+        src="https://astershop.oss-cn-shenzhen.aliyuncs.com/bfav_small.svg"
+        alt=""
       />
       <LogoWithText className="desktop-icon" isDark={isDark} />
     </>
