@@ -18,7 +18,7 @@ const connectors: Config[] = [
     title: "Tron Link Wallet",
     icon: BinanceChain,
     connectorId: ConnectorNames.TRON,
-  }
+  },
 ];
 
 export default connectors;

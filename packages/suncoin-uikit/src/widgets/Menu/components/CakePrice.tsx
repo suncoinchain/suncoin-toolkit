@@ -27,7 +27,9 @@ const CakePrice: React.FC<Props> = ({ cakePriceUsd }) => {
       href="https://justswap.org/#/home?tokenAddress=TKBBpvo3DEmiGkZnFk9aMFRzf4yBMpvUA4&type=swap"
       target="_blank"
     >
-      <Text color="textSubtle" bold>BFAV:</Text>
+      <Text color="textSubtle" bold>
+        BFAV:
+      </Text>
       <Text color="textSubtle" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
     </PriceLink>
   ) : (
